@@ -21,12 +21,24 @@
     <ClInclude Include="SimpleSolver.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="ComplexSolver.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Complex.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ISolver.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="SimpleSolver.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexSolver.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Complex.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

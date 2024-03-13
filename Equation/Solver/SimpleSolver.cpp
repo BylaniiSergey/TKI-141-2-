@@ -4,10 +4,12 @@ SimpleSolver::SimpleSolver(double a, double b, double c)
     :ISolver(a, b, c) {}
 std::vector<double> SimpleSolver::solve() {
     auto discr = discriminant();
-    if (discr < 0) {
+    if (discr < 0) 
+    {
         throw;
     }
-    if (discr == 0) {
+    if (discr == 0) 
+    {
         auto solve = -b / (2 * a);
         return std::vector<double>{solve};
     }
