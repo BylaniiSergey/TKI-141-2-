@@ -17,13 +17,6 @@ public:
 		output << a.toString();
 		return output;
 	}
-	friend std::istream& operator>>(std::istream & is, Complex & c) {
-		std::cout << "¬ведите действительную часть: ";
-		is >> c.real;
-		std::cout << "¬ведите мнимую часть: ";
-		is >> c.imaginary;
-		return is;
-	}
 	Complex operator+(Complex other);
 	Complex operator-(Complex other);
 	Complex operator*(Complex other);
