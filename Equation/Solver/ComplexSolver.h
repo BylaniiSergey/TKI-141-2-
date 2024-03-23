@@ -5,10 +5,10 @@
 #include <vector>
 class ComplexSolver : public ISolver {
 public:
-    // Конструктор класса
+    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
     ComplexSolver(double _a, double _b, double _c);
 
-    // Метод для нахождения комплексных корней
+    // РњРµС‚РѕРґ РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РєРѕРјРїР»РµРєСЃРЅС‹С… РєРѕСЂРЅРµР№
     std::vector<Complex> find_complex_roots();
 };
 
