@@ -7,3 +7,4 @@ double ISolver::discriminant()
 {
 	return b * b - 4 * a * c;
 }
+

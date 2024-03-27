@@ -9,10 +9,7 @@ class Complex
 public:
 	Complex(double real, double imaginary);
 	std::string toString() const;
-	Complex(const Complex& other) {
-		this->real = other.real;
-		this->imaginary = other.imaginary;
-	}
+	Complex(const Complex& other);
 	friend std::ostream& operator<<(std::ostream& output, const Complex& a) {
 		output << a.toString();
 		return output;
@@ -22,18 +19,18 @@ public:
 	Complex operator*(Complex other);
 	Complex operator/(Complex other);
 	std::string stringAlgebra() {
-		return "¿Î„Â·‡Ë˜ÂÒÍ‡ˇ ÙÓÏ‡: " + this->toString();
+		return "–ê–ª–≥–µ–±—Ä–∞–∏—á–µ—Å–∫–∞—è —Ñ–æ—Ä–º–∞: " + this->toString();
 	}
 	std::string stringTrig() {
-		double r = this->real; // ÏÓ‰ÛÎ¸ ˜ËÒÎ‡
-		double theta = this->imaginary; // ‡„ÛÏÂÌÚ ˜ËÒÎ‡
-		return "“Ë„ÓÌÓÏÂÚË˜ÂÒÍ‡ˇ ÙÓÏ‡: " + std::to_string(r) + " * (cos(" + std::to_string(theta) + ") + i * sin(" + std::to_string(theta) + "))";
+		double r = this->real; // –º–æ–¥—É–ª—å —á–∏—Å–ª–∞
+		double theta = this->imaginary; // –∞—Ä–≥—É–º–µ–Ω—Ç —á–∏—Å–ª–∞
+		return "–¢—Ä–∏–≥–æ–Ω–æ–º–µ—Ç—Ä–∏—á–µ—Å–∫–∞—è —Ñ–æ—Ä–º–∞: " + std::to_string(r) + " * (cos(" + std::to_string(theta) + ") + i * sin(" + std::to_string(theta) + "))";
 
 	}
 	std::string stringExp() {
-		double r = this->real; // ÏÓ‰ÛÎ¸ ˜ËÒÎ‡
-		double theta = this->imaginary; // ‡„ÛÏÂÌÚ ˜ËÒÎ‡
-		return "›ÍÒÔÓÌÂÌˆË‡Î¸Ì‡ˇ ÙÓÏ‡: " + std::to_string(r) + " * exp(i * " + std::to_string(theta) + ")";
+		double r = this->real; // –º–æ–¥—É–ª—å —á–∏—Å–ª–∞
+		double theta = this->imaginary; // –∞—Ä–≥—É–º–µ–Ω—Ç —á–∏—Å–ª–∞
+		return "–≠–∫—Å–ø–æ–Ω–µ–Ω—Ü–∏–∞–ª—å–Ω–∞—è —Ñ–æ—Ä–º–∞: " + std::to_string(r) + " * exp(i * " + std::to_string(theta) + ")";
 	}
 };
 

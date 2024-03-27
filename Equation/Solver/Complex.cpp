@@ -29,6 +29,11 @@ Complex Complex::operator/(Complex other) {
 	auto b = this->imaginary;
 	auto c = other.real;
 	auto d = other.imaginary;
-	if (a * a + d * d == std::numeric_limits<double>::epsilon()) throw;
+	if (a * a + d * d <= std::numeric_limits<double>::epsilon()) throw;
 	return Complex((a * c + b * d) / (c * c + d * d), (b * c - a * d) / (c * c + d * d));
+}
+
+Complex::Complex(const Complex& other) {
+	this->real = other.real;
+	this->imaginary = other.imaginary;
 }

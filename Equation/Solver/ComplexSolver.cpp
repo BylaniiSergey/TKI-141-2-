@@ -4,7 +4,7 @@
 ComplexSolver::ComplexSolver(double _a, double _b, double _c) : ISolver(_a, _b, _c) {}
 
 std::vector<Complex> ComplexSolver::find_complex_roots() {
-    std::vector<Complex> roots;
+    std::vector<Complex> roots{};
     double discriminant = this->discriminant();
 
     if (discriminant < 0) {
@@ -16,7 +16,7 @@ std::vector<Complex> ComplexSolver::find_complex_roots() {
         roots.emplace_back(Complex(real_part, -imaginary_part));
 
     }
-    else if (discriminant == 0) {
+    else if (discriminant == std::numeric_limits<double>::epsilon()) {
         // Если дискриминант равен нулю, тогда корни - одинаковые действительные числа
         double root = -b / (2 * a);
 

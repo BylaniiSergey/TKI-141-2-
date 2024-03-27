@@ -2,12 +2,11 @@
 #include <locale>
 #include "..\Solver\SimpleSolver.h"
 #include "..\Solver\ComplexSolver.h"
-
 #include "..\Solver\Complex.h"
 
 /**
-* @brif Точка входа в программу
-* @return 0 в случае успеха
+* @brif РўРѕС‡РєР° РІС…РѕРґР° РІ РїСЂРѕРіСЂР°РјРјСѓ
+* @return 0 РІ СЃР»СѓС‡Р°Рµ СѓСЃРїРµС…Р°
 */
 int main()
 {
@@ -23,7 +22,7 @@ int main()
 	std::cout << b1 << std::endl << b2 << std::endl << b1.stringExp() << std::endl << b1.stringTrig() << std::endl;
 	auto comSolver = ComplexSolver(10, 5, 9);
 	auto roots = comSolver.find_complex_roots();
-	std::cout << "Комплексные корни:\n";
+	std::cout << "РљРѕРјРїР»РµРєСЃРЅС‹Рµ РєРѕСЂРЅРё:\n";
 	for (auto& root : roots) {
 		std::cout << root << std::endl;
 	}
