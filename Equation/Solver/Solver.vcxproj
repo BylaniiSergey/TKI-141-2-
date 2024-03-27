@@ -131,6 +131,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Complex.h" />
+    <ClInclude Include="ComplexSolver.h" />
+    <ClInclude Include="ISolver.h" />
+    <ClInclude Include="SimpleSolver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Complex.cpp" />
+    <ClCompile Include="ComplexSolver.cpp" />
+    <ClCompile Include="ISolver.cpp" />
+    <ClCompile Include="SimpleSolver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
