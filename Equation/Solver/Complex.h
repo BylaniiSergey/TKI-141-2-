@@ -7,6 +7,7 @@ class Complex
 	double real;
 	double imaginary;
 public:
+	Complex();
 	Complex(double real, double imaginary);
 	std::string toString() const;
 	Complex(const Complex& other);
@@ -18,6 +19,7 @@ public:
 	Complex operator-(Complex other);
 	Complex operator*(Complex other);
 	Complex operator/(Complex other);
+	Complex conjugate();
 	std::string stringAlgebra() {
 		return "Алгебраическая форма: " + this->toString();
 	}

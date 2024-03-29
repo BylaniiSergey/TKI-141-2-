@@ -1,12 +1,12 @@
 #pragma once
 #include "ISolver.h"
-#include <vector>
 #include <cmath>
+#include <utility>
 class SimpleSolver :
     public ISolver
 {
 public:
-    SimpleSolver(double a, double b, double c);
-    std::vector<double> solve();
+    SimpleSolver() = default;
+    std::pair<double, double> solve(double a, double b, double c);
 };
 

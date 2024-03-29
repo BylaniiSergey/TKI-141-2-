@@ -2,13 +2,14 @@
 #include "ISolver.h"
 #include "Complex.h"
 #include <cmath>
-#include <vector>
+#include <utility>
 class ComplexSolver : public ISolver {
 public:
     // Конструктор класса
-    ComplexSolver(double _a, double _b, double _c);
+    ComplexSolver() = default;
 
     // Метод для нахождения комплексных корней
-    std::vector<Complex> find_complex_roots();
+    std::pair<Complex, Complex> find_complex_roots(double a, double b, double c);
+
 };
 
