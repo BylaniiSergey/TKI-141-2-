@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include "BaseAnswer.h"
 
 class Complex
 {
@@ -9,10 +10,10 @@ class Complex
 public:
 	Complex();
 	Complex(double real, double imaginary);
-	std::string toString() const;
+	std::string ToString() const;
 	Complex(const Complex& other);
 	friend std::ostream& operator<<(std::ostream& output, const Complex& a) {
-		output << a.toString();
+		output << a.ToString();
 		return output;
 	}
 	Complex operator+(Complex other);
@@ -21,7 +22,7 @@ public:
 	Complex operator/(Complex other);
 	Complex conjugate();
 	std::string stringAlgebra() {
-		return "Алгебраическая форма: " + this->toString();
+		return "Алгебраическая форма: " + this->ToString();
 	}
 	std::string stringTrig() {
 		double r = this->real; // модуль числа
@@ -35,4 +36,3 @@ public:
 		return "Экспоненциальная форма: " + std::to_string(r) + " * exp(i * " + std::to_string(theta) + ")";
 	}
 };
-

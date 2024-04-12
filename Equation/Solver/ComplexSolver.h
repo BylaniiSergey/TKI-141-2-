@@ -1,15 +1,13 @@
 #pragma once
-#include "ISolver.h"
-#include "Complex.h"
+#include "BaseSolver.h"
+#include "ComplexAnswer.h"
 #include <cmath>
 #include <utility>
-class ComplexSolver : public ISolver {
+class ComplexSolver : public BaseSolver {
 public:
-    // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР°
+    // Конструктор класса
     ComplexSolver() = default;
 
-    // РњРµС‚РѕРґ РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РєРѕРјРїР»РµРєСЃРЅС‹С… РєРѕСЂРЅРµР№
-    std::pair<Complex, Complex> find_complex_roots(double a, double b, double c);
-
+    // Метод для нахождения комплексных корней
+    BaseAnswer* Solve(double a, double b, double c) const override;
 };
-

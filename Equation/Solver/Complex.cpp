@@ -5,7 +5,7 @@
 Complex::Complex(double real, double imaginary)
 	:real(real), imaginary(imaginary) {}
 
-std::string Complex::toString() const {
+std::string Complex::ToString() const {
 	if (this->imaginary < 0) {
 		return std::format("({} - {}i)", this->real, -this->imaginary);
 	}

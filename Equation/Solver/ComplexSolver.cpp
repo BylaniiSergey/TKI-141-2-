@@ -1,31 +1,33 @@
 #include "ComplexSolver.h"
+#include "Complex.h"
 
 
-std::pair<Complex, Complex> ComplexSolver::find_complex_roots(double a, double b, double c) {
-    std::pair<Complex, Complex> roots;
-    double discriminant = this->discriminant(a, b, c);
+BaseAnswer* ComplexSolver::Solve(double a, double b, double c) const {
+    ComplexAnswer *roots = new ComplexAnswer(Complex(), Complex());
+    double discriminant = this->GetDiscriminant(a, b, c);
 
     if (discriminant < 0) {
-        // Ð•ÑÐ»Ð¸ Ð´Ð¸ÑÐºÑ€Ð¸Ð¼Ð¸Ð½Ð°Ð½Ñ‚ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹, Ñ‚Ð¾Ð³Ð´Ð° ÐºÐ¾Ñ€Ð½Ð¸ - ÐºÐ¾Ð¼Ð¿Ð»ÐµÐºÑÐ½Ñ‹Ðµ Ñ‡Ð¸ÑÐ»Ð°
+        // Åñëè äèñêðèìèíàíò îòðèöàòåëüíûé, òîãäà êîðíè - êîìïëåêñíûå ÷èñëà
         double real_part = -b / (2 * a);
         double imaginary_part = sqrt(-discriminant) / (2 * a);
 
-        roots.first = Complex(real_part, imaginary_part);
-        roots.second = Complex(real_part, -imaginary_part);
+        roots->setFirst(Complex(real_part, imaginary_part));
+        roots->setSecond(Complex(real_part, -imaginary_part));
 
     }
     else if (discriminant == std::numeric_limits<double>::epsilon()) {
-        // Ð•ÑÐ»Ð¸ Ð´Ð¸ÑÐºÑ€Ð¸Ð¼Ð¸Ð½Ð°Ð½Ñ‚ Ñ€Ð°Ð²ÐµÐ½ Ð½ÑƒÐ»ÑŽ, Ñ‚Ð¾Ð³Ð´Ð° ÐºÐ¾Ñ€Ð½Ð¸ - Ð¾Ð´Ð¸Ð½Ð°ÐºÐ¾Ð²Ñ‹Ðµ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ñ‡Ð¸ÑÐ»Ð°
+        // Åñëè äèñêðèìèíàíò ðàâåí íóëþ, òîãäà êîðíè - îäèíàêîâûå äåéñòâèòåëüíûå ÷èñëà
         double root = -b / (2 * a);
 
-        roots.first=Complex(root, 0);
-    } else {
-        // Ð•ÑÐ»Ð¸ Ð´Ð¸ÑÐºÑ€Ð¸Ð¼Ð¸Ð½Ð°Ð½Ñ‚ Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ð¹, Ñ‚Ð¾Ð³Ð´Ð° ÐºÐ¾Ñ€Ð½Ð¸ - Ð´Ð²Ð° Ñ€Ð°Ð·Ð»Ð¸Ñ‡Ð½Ñ‹Ñ… Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ñ… Ñ‡Ð¸ÑÐ»Ð°
+        roots->setFirst(Complex(root, 0));
+    }
+    else {
+        // Åñëè äèñêðèìèíàíò ïîëîæèòåëüíûé, òîãäà êîðíè - äâà ðàçëè÷íûõ äåéñòâèòåëüíûõ ÷èñëà
         double root1 = (-b + sqrt(discriminant)) / (2 * a);
         double root2 = (-b - sqrt(discriminant)) / (2 * a);
 
-        roots.first=Complex(root1, 0);
-        roots.second=Complex(root2, 0);
+        roots->setFirst(Complex(root1, 0));
+        roots->setSecond(Complex(root2, 0));
     }
     return roots;
 }
