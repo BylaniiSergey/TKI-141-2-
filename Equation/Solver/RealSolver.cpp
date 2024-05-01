@@ -10,7 +10,7 @@ BaseAnswer* RealSolver::Solve(
     const double b,
     const double c) const
 {
-    if (a <= std::numeric_limits<double>::epsilon())
+    if (std::abs(a) <= std::numeric_limits<double>::epsilon())
     {
         throw std::runtime_error("No quadratic equation");
     }
@@ -22,7 +22,9 @@ BaseAnswer* RealSolver::Solve(
         throw std::runtime_error("No real roots");
     }
 
-    return new RealAnswer(
-        (b + std::sqrt(discriminant)) / (2 * a),
-        (b - std::sqrt(discriminant)) / (2 * a));
+    const auto root = std::sqrt(discriminant);
+    const auto x1 = (-b + root) / (2 * a);
+    const auto x2 = (-b - root) / (2 * a);
+
+    return new RealAnswer(x1, x2);
 }

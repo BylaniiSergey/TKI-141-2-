@@ -22,9 +22,12 @@ Complex ComplexAnswer::getSecond() const
 	return second;
 }
 
-void ComplexAnswer::setFirst(Complex number) {
+void ComplexAnswer::setFirst(Complex number) 
+{
 	this->first = number;
 }
-void ComplexAnswer::setSecond(Complex number) {
+
+void ComplexAnswer::setSecond(Complex number) 
+{
 	this->second = number;
 }

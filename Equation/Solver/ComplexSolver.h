@@ -3,7 +3,8 @@
 #include "ComplexAnswer.h"
 #include <cmath>
 #include <utility>
-class ComplexSolver : public BaseSolver {
+class ComplexSolver : public BaseSolver 
+{
 public:
     // Конструктор класса
     ComplexSolver() = default;

@@ -1,3 +1,4 @@
+#include <sstream>
 #include "RealAnswer.h"
 
 RealAnswer::RealAnswer(const double first, const double second)
@@ -7,5 +8,7 @@ RealAnswer::RealAnswer(const double first, const double second)
 
 std::string RealAnswer::ToString() const
 {
-    return "{ " + std::to_string(first) + "; " + std::to_string(second) + " }";
+    std::stringstream buffer{};
+    buffer << "{ " << this->first << "; " << this->second << " }";
+    return buffer.str();
 }

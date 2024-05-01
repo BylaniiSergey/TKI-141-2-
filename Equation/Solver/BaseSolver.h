@@ -8,6 +8,7 @@ public:
         const double a,
         const double b,
         const double c) const = 0;
+
     double GetDiscriminant(
         const double a,
         const double b,

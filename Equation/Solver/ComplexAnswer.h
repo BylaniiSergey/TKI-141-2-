@@ -9,7 +9,6 @@ public:
 	Complex getSecond() const;
 	void setFirst(Complex number);
 	void setSecond(Complex number);
-
 private:
 	Complex first;
 	Complex second;
