@@ -140,7 +140,6 @@
     <ClInclude Include="RealSolver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BaseAnswer.cpp" />
     <ClCompile Include="ComplexAnswer.cpp" />
     <ClCompile Include="ComplexSolver.cpp" />
     <ClCompile Include="Complex.cpp" />

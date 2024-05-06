@@ -158,6 +158,8 @@
   <ItemGroup>
     <ClCompile Include="RealAnswer.Tests.cpp" />
     <ClCompile Include="RealSolver.Tests.cpp" />
+    <ClCompile Include="ComplexAnswerTest.cpp" />
+    <ClCompile Include="ComplexSolverTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Solver\Solver.vcxproj">

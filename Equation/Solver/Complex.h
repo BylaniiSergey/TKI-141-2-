@@ -37,6 +37,6 @@ public:
 	{
 		double r = this->real; // модуль числа
 		double theta = this->imaginary; // аргумент числа
-		return "Экспоненциальная форма: " + std::to_string(r) + " * exp(i * " + std::to_string(theta) + ")";
+		return "Экспотенциальная форма: " + std::to_string(r) + " * exp(i * " + std::to_string(theta) + ")";
 	}
 };
