@@ -1,7 +1,10 @@
 #include <iostream>
 #include "..//Solver/MyLinkedList.h"
 
-int main() {
+int main() 
+{
+    
+
     MyLinkedList list = { 1, 2, 3, 4 };
     std::cout << "Первоначальный список: " << list << std::endl;
 
