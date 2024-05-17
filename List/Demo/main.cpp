@@ -3,7 +3,7 @@
 
 int main() 
 {
-    
+    std::setlocale(NULL, "ru_RU.UTF-8");
 
     MyLinkedList list = { 1, 2, 3, 4 };
     std::cout << "Первоначальный список: " << list << std::endl;
