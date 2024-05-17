@@ -27,7 +27,7 @@ MyLinkedList& MyLinkedList::operator=(const MyLinkedList& other)
         return *this;
     }
 
-    // Очистить текущий список
+    // РћС‡РёСЃС‚РёС‚СЊ С‚РµРєСѓС‰РёР№ СЃРїРёСЃРѕРє
     while (head != nullptr) 
     {
         Node* temp = head;
@@ -35,7 +35,7 @@ MyLinkedList& MyLinkedList::operator=(const MyLinkedList& other)
         delete temp;
     }
 
-    // Копировать элементы
+    // РљРѕРїРёСЂРѕРІР°С‚СЊ СЌР»РµРјРµРЅС‚С‹
     Node* temp = other.head;
     while (temp != nullptr) 
     {

@@ -3,16 +3,16 @@
 
 int main() {
     MyLinkedList list = { 1, 2, 3, 4 };
-    std::cout << "Ïåğâîíà÷àëüíûé ñïèñîê: " << list << std::endl;
+    std::cout << "ĞŸĞµÑ€Ğ²Ğ¾Ğ½Ğ°Ñ‡Ğ°Ğ»ÑŒĞ½Ñ‹Ğ¹ ÑĞ¿Ğ¸ÑĞ¾Ğº: " << list << std::endl;
 
     list.push_back(5);
-    std::cout << "Ñïèñîê ïîñëå push_back(5): " << list << std::endl;
+    std::cout << "Ğ¡Ğ¿Ğ¸ÑĞ¾Ğº Ğ¿Ğ¾ÑĞ»Ğµ push_back(5): " << list << std::endl;
 
     list.pop_front();
-    std::cout << "Ñïèñîê ïîñëå pop_front(): " << list << std::endl;
+    std::cout << "Ğ¡Ğ¿Ğ¸ÑĞ¾Ğº Ğ¿Ğ¾ÑĞ»Ğµ pop_front(): " << list << std::endl;
 
     list.pop_back();
-    std::cout << "Ñïèñîê ïîñëå pop_back(): " << list << std::endl;
+    std::cout << "Ğ¡Ğ¿Ğ¸ÑĞ¾Ğº Ğ¿Ğ¾ÑĞ»Ğµ pop_back(): " << list << std::endl;
 
     return 0;
 }
