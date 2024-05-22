@@ -1,16 +1,17 @@
 #include "MyLinkedList.h"
+#include <sstream>
 
 MyLinkedList::MyLinkedList() : head(nullptr) {}
 
-MyLinkedList::MyLinkedList(std::initializer_list<int> initList) : head(nullptr) 
+MyLinkedList::MyLinkedList(std::initializer_list<int> initList) : MyLinkedList()
 {
-    for (int value : initList)
+    for (auto& value : initList)
     {
         push_back(value);
     }
 }
 
-MyLinkedList::MyLinkedList(const MyLinkedList& other) : head(nullptr) 
+MyLinkedList::MyLinkedList(const MyLinkedList& other) : MyLinkedList()
 {
     Node* temp = other.head;
     while (temp != nullptr) 
@@ -22,27 +23,8 @@ MyLinkedList::MyLinkedList(const MyLinkedList& other) : head(nullptr)
 
 MyLinkedList& MyLinkedList::operator=(const MyLinkedList& other) 
 {
-    if (this == &other) 
-    {
-        return *this;
-    }
-
-    // Очистить текущий список
-    while (head != nullptr) 
-    {
-        Node* temp = head;
-        head = head->next;
-        delete temp;
-    }
-
-    // Копировать элементы
-    Node* temp = other.head;
-    while (temp != nullptr) 
-    {
-        push_back(temp->data);
-        temp = temp->next;
-    }
-
+    MyLinkedList temp(other);
+    std::swap(this->head, temp.head);
     return *this;
 }
 
@@ -63,14 +45,15 @@ bool MyLinkedList::isEmpty() const
 
 std::string MyLinkedList::toString() const 
 {
-    std::string result;
+    //std::string result;
+    std::stringstream result;
     Node* temp = head;
     while (temp != nullptr) 
     {
-        result += std::to_string(temp->data) + " ";
+        result << temp->data << " ";
         temp = temp->next;
     }
-    return result;
+    return result.str();
 }
 
 void MyLinkedList::push_back(int value)
@@ -93,6 +76,7 @@ void MyLinkedList::push_back(int value)
 
 void MyLinkedList::push_front(int value) 
 {
+  
     Node* newNode = new Node{ value, head };
     head = newNode;
 }
@@ -133,4 +117,38 @@ std::ostream& operator<<(std::ostream& os, const MyLinkedList& list)
 {
     os << list.toString();
     return os;
+}
+
+void MyLinkedList::insert(int idx, int elem) 
+{
+    if (idx < 0) throw;
+    size_t index = idx;
+    Node* current = head;
+    size_t curr_index = 0;
+    while (curr_index - 1 < index) 
+    {
+        current = current->next;
+        curr_index++;
+    }
+    Node* tmp = current->next;
+    current->next = new Node();
+    current = current->next;
+    current->data = elem;
+    current->next = tmp;
+}
+
+void MyLinkedList::remove(int idx) 
+{
+    if (idx < 0) throw;
+    size_t index = idx;
+    Node* current = head;
+    size_t curr_index = 0;
+    while (curr_index - 1 < index) 
+    {
+        current = current->next;
+        curr_index++;
+    }
+    Node* tmp = current->next->next;
+    delete current->next;
+    current->next = tmp;
 }
