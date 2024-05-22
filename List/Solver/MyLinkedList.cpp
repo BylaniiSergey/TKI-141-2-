@@ -152,3 +152,9 @@ void MyLinkedList::remove(int idx)
     delete current->next;
     current->next = tmp;
 }
+
+MyLinkedList::MyLinkedList(MyLinkedList&& other) noexcept
+{
+    head = other.head;
+    other.head = nullptr;
+}

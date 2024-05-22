@@ -2,7 +2,7 @@
 #include <string>
 
 /**
-* @brief - Имя/название
+* @brief - РРјСЏ/РЅР°Р·РІР°РЅРёРµ
 */
 class MyLinkedList 
 {
@@ -17,44 +17,31 @@ private:
 
 public:
     /**
-    * @brief - Конструктор
+    * @brief - РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
     */
     MyLinkedList();
     MyLinkedList(std::initializer_list<int> initList);
     MyLinkedList(const MyLinkedList& other);
-    MyLinkedList& operator=(const MyLinkedList& other);
     ~MyLinkedList();
 
     /**
-    * @brief - Конструктор перемещения
+    * @brief - РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
     */
-    MyLinkedList(MyLinkedList&& other) noexcept 
-    {
-        head = other.head;
-        other.head = nullptr;
-    }
+    MyLinkedList(MyLinkedList&& other) noexcept;
 
     /**
-    * @brief - Оператор перемещения
+    * @brief - РћРїРµСЂР°С‚РѕСЂ РїРµСЂРµРјРµС‰РµРЅРёСЏ
     */
-    MyLinkedList& operator=(MyLinkedList&& other) noexcept 
-    {
-        if (this != &other) 
-        {
-            delete head;
-            head = other.head;
-            other.head = nullptr;
-        }
-    }
+    MyLinkedList& operator=(const MyLinkedList& other);
 
     /**
-    * @brief - Проверка списка
+    * @brief - РџСЂРѕРІРµСЂРєР° СЃРїРёСЃРєР°
     */
     bool isEmpty() const;
     std::string toString() const;
 
     /**
-    * @brief - Функции
+    * @brief - Р¤СѓРЅРєС†РёРё
     */
     void push_back(int value);
     void push_front(int value);
@@ -64,7 +51,7 @@ public:
     void remove(int idx);
 
     /**
-    * @brief - Оператор сдвига
+    * @brief - РћРїРµСЂР°С‚РѕСЂ СЃРґРІРёРіР°
     */
     friend std::ostream& operator<<(std::ostream& os, const MyLinkedList& list);
 };
