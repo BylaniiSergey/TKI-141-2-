@@ -2,7 +2,7 @@
 #include <string>
 
 /**
-* @brief - Имя/название
+* @brief - Создаём класс MyLinkedList
 */
 class MyLinkedList 
 {
@@ -20,8 +20,11 @@ public:
     * @brief - Конструктор
     */
     MyLinkedList();
+    
     MyLinkedList(std::initializer_list<int> initList);
+
     MyLinkedList(const MyLinkedList& other);
+
     ~MyLinkedList();
 
     /**
@@ -39,7 +42,6 @@ public:
     */
     bool isEmpty() const;
     std::string toString() const;
-
     /**
     * @brief - Функции
     */

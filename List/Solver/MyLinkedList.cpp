@@ -38,6 +38,12 @@ MyLinkedList::~MyLinkedList()
     }
 }
 
+MyLinkedList::MyLinkedList(MyLinkedList&& other) noexcept
+{
+    head = other.head;
+    other.head = nullptr;
+}
+
 bool MyLinkedList::isEmpty() const
 {
     return head == nullptr;
@@ -56,6 +62,7 @@ std::string MyLinkedList::toString() const
     return result.str();
 }
 
+//
 void MyLinkedList::push_back(int value)
 {
     Node* newNode = new Node{ value, nullptr };
@@ -74,13 +81,14 @@ void MyLinkedList::push_back(int value)
     }
 }
 
+//
 void MyLinkedList::push_front(int value) 
 {
-  
     Node* newNode = new Node{ value, head };
     head = newNode;
 }
 
+//
 void MyLinkedList::pop_back()
 {
     if (head == nullptr) 
@@ -119,6 +127,7 @@ std::ostream& operator<<(std::ostream& os, const MyLinkedList& list)
     return os;
 }
 
+//
 void MyLinkedList::insert(int idx, int elem) 
 {
     if (idx < 0) throw;
@@ -151,10 +160,4 @@ void MyLinkedList::remove(int idx)
     Node* tmp = current->next->next;
     delete current->next;
     current->next = tmp;
-}
-
-MyLinkedList::MyLinkedList(MyLinkedList&& other) noexcept
-{
-    head = other.head;
-    other.head = nullptr;
 }
