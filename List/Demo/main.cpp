@@ -1,6 +1,10 @@
 #include <iostream>
 #include "..//Solver/MyLinkedList.h"
 
+/**
+* @brief Точка входа в программу
+* @return 0 в случае успеха
+*/
 int main() 
 {
     std::setlocale(NULL, "ru_RU.UTF-8");

@@ -51,7 +51,6 @@ bool MyLinkedList::isEmpty() const
 
 std::string MyLinkedList::toString() const 
 {
-    //std::string result;
     std::stringstream result;
     Node* temp = head;
     while (temp != nullptr) 
@@ -62,7 +61,6 @@ std::string MyLinkedList::toString() const
     return result.str();
 }
 
-//
 void MyLinkedList::push_back(int value)
 {
     Node* newNode = new Node{ value, nullptr };
@@ -81,14 +79,12 @@ void MyLinkedList::push_back(int value)
     }
 }
 
-//
 void MyLinkedList::push_front(int value) 
 {
     Node* newNode = new Node{ value, head };
     head = newNode;
 }
 
-//
 void MyLinkedList::pop_back()
 {
     if (head == nullptr) 
@@ -127,7 +123,6 @@ std::ostream& operator<<(std::ostream& os, const MyLinkedList& list)
     return os;
 }
 
-//
 void MyLinkedList::insert(int idx, int elem) 
 {
     if (idx < 0) throw;
