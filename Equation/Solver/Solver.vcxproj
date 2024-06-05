@@ -131,6 +131,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseAnswer.h" />
+    <ClInclude Include="Complex.h" />
+    <ClInclude Include="BaseSolver.h" />
+    <ClInclude Include="ComplexAnswer.h" />
+    <ClInclude Include="ComplexSolver.h" />
+    <ClInclude Include="RealAnswer.h" />
+    <ClInclude Include="RealSolver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ComplexAnswer.cpp" />
+    <ClCompile Include="ComplexSolver.cpp" />
+    <ClCompile Include="Complex.cpp" />
+    <ClCompile Include="BaseSolver.cpp" />
+    <ClCompile Include="RealAnswer.cpp" />
+    <ClCompile Include="RealSolver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
