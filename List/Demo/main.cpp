@@ -1,31 +1,64 @@
-#include <iostream>
-#include "..//Solver/MyLinkedList.h"
-
 /**
-* @brief Точка входа в программу
-* @return 0 в случае успеха
-*/
-int main() 
+#include "../Solver/Rectangle.h"
+
+int main()
 {
-    std::setlocale(NULL, "ru_RU.UTF-8");
+    Point p1{ 0, 0 };
+    Color c1(255, 0, 0);
+    Rectangle rect(p1, 10, 5, c1);
 
-    MyLinkedList list = { 1, 2, 3, 4 };
-    std::cout << "Первоначальный список: " << list << std::endl;
-
-    list.push_back(5);
-    std::cout << "Список после push_back(5): " << list << std::endl;
-
-    list.pop_front();
-    std::cout << "Список после pop_front(): " << list << std::endl;
-
-    list.pop_back();
-    std::cout << "Список после pop_back(): " << list << std::endl;
-
-    list.insert(0, 8);
-    std::cout << "Список после insert(0, 8): " << list << std::endl;
-
-    list.remove(3);
-    std::cout << "Список после remove(3): " << list << std::endl;
+    std::cout << rect << std::endl;
 
     return 0;
 }
+*/
+
+#include "..//Solver/figure.h"
+int main() {
+    try {
+        Point p1{ 0, 0 };
+        Point p2{ 10, 10 };
+        Color c{ 255, 0, 0 };
+        Rectangle rect(p1, p2, c);
+
+        rect.draw();
+
+        Font font("Arial", c, 12);
+        std::cout << font << std::endl;
+
+        Rectangle rect2(Point(0, 0), 20, 20, Color(0, 255, 0));
+        rect2.draw();
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    return 0;
+}
+
+
+/**
+#include <iostream>
+#include "..//Solver/LinkedList.h"
+
+
+* @brief Точка входа в программу
+* @return 0 в случае успеха
+
+int main() {
+    LinkedList list = { 1, 2, 3 };
+
+    std::cout << "Initial list: " << list.toString() << std::endl;
+
+    list << 4;
+    list << 5;
+
+    std::cout << "After adding elements: " << list.toString() << std::endl;
+
+    list >> 5;
+    list >> 4;
+
+    std::cout << "After removing elements: " << list.toString() << std::endl;
+
+    return 0;
+*/
